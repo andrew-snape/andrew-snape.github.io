@@ -5,3 +5,5 @@
 layout: home
 ---
 Just hosting random things here and scripts 
+
+Mainly to do with education and teaching
