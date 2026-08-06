@@ -4,6 +4,5 @@
 
 layout: home
 ---
-Just hosting random things here and scripts 
-
-Mainly to do with education and teaching
+A coding blog about my self-hosted homelab — a NAS running a Docker-based
+stack with the *arrs, Plex, Immich, File Flows, and Homebridge.

@@ -21,7 +21,8 @@
 title: Andrew Snape
 email: andrew@andrewsnape.com.au
 description: >- # this means to ignore newlines until "baseurl:"
-  Andrew Snape's GitHub Site
+  A coding blog about running a self-hosted homelab: NAS, Docker,
+  the *arrs, Plex, Immich, File Flows, and Homebridge.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://andrew-snape.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
