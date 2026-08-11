@@ -1,0 +1,68 @@
+# Builds and deploys the Jekyll site to GitHub Pages via GitHub Actions,
+# instead of the legacy "Deploy from a branch" Pages source. Runs on every
+# push to master, on a daily schedule, and on demand.
+#
+# The daily schedule exists so future-dated posts publish themselves: Jekyll
+# already skips posts whose `date:` is in the future, but GitHub Pages only
+# rebuilds on push -- without a schedule, a future-dated post sitting in the
+# repo wouldn't go live on its date, only whenever something next gets
+# pushed. This runs once a day so that gap closes on its own.
+#
+# Requires repo Settings -> Pages -> "Build and deployment" -> Source to be
+# set to "GitHub Actions" (not "Deploy from a branch").
+
+name: Deploy Jekyll site to Pages
+
+on:
+  push:
+    branches: ["master"]
+  schedule:
+    # 00:15 UTC daily -- shortly after midnight, so a post dated "today"
+    # goes live promptly.
+    - cron: "15 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Queue deployments rather than cancel an in-progress one -- avoids the
+# "push cancels the in-flight deploy" trap the old branch-based Pages
+# source used to hit.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
