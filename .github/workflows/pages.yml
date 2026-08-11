@@ -17,9 +17,11 @@ on:
   push:
     branches: ["master"]
   schedule:
-    # 00:15 UTC daily -- shortly after midnight, so a post dated "today"
-    # goes live promptly.
-    - cron: "15 0 * * *"
+    # 22:05 UTC daily = ~8:05am AEST (UTC+10, no daylight saving). Timed to
+    # land shortly after an 8am-AEST-dated post's timestamp so it publishes
+    # close to that time. Note: during AEDT (UTC+11, roughly Oct-Apr) this
+    # drifts an hour later, to ~9:05am -- adjust the cron then if it matters.
+    - cron: "5 22 * * *"
   workflow_dispatch:
 
 permissions:
