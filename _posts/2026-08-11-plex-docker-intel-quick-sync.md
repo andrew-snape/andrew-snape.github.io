@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Plex, Docker, and Getting Intel Quick Sync Working Again"
-date: 2026-08-12 08:00:00
+date: 2026-08-11
 categories: [homelab, plex]
 author: Andrew Snape
 ---

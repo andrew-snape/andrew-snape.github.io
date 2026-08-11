@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Automating My Media Library with FileFlows"
-date: 2026-08-13 08:00:00
+date: 2026-08-11
 categories: [homelab, fileflows]
 author: Andrew Snape
 ---
 
 Storage keeps getting more expensive to add, not less -- about 17TB in now, before RAID overhead, and every extra drive is a bigger ask than the last one. Long term the real fix is smaller files: re-encoding the older, wasteful parts of the library into H.265/HEVC (or AV1) instead of just buying more disks. I looked at doing this by hand a couple of times and gave up both times -- manual ffmpeg batch jobs that didn't talk to the rest of the setup and didn't scale past "run it once on a folder and hope."
 
-[FileFlows](https://fileflows.com) is what finally stuck. It's a self-hosted, Docker-deployable file processing tool with a drag-and-drop flow builder, and -- the part that actually made it worth setting up -- proper Intel Quick Sync support, using the same `/dev/dri` device passthrough as [the Plex hardware transcoding setup]({% post_url 2026-08-12-plex-docker-intel-quick-sync %}).
+[FileFlows](https://fileflows.com) is what finally stuck. It's a self-hosted, Docker-deployable file processing tool with a drag-and-drop flow builder, and -- the part that actually made it worth setting up -- proper Intel Quick Sync support, using the same `/dev/dri` device passthrough as [the Plex hardware transcoding setup]({% post_url 2026-08-11-plex-docker-intel-quick-sync %}).
 
 ## What the main flow actually does
 
