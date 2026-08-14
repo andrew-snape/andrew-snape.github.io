@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Getting My Electric Car into HomeKit, and Proving One Feature Was Impossible"
-date: 2026-08-19
+date: 2026-08-14
 categories: [projects, homelab, homebridge]
 author: Andrew Snape
 ---

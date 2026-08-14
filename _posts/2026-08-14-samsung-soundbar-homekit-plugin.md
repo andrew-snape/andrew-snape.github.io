@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Getting a Samsung Soundbar into HomeKit: A Homebridge Plugin, Shipped Twice"
-date: 2026-08-18
+date: 2026-08-14
 categories: [projects, homelab, homebridge]
 author: Andrew Snape
 ---

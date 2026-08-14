@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Audiobooks and Music: The Messy Half of the Media Stack"
-date: 2026-08-15
+date: 2026-08-14
 categories: [homelab, audiobooks, music]
 author: Andrew Snape
 ---
@@ -74,7 +74,7 @@ The denylist is the important half. Without it, a release that fails to
 import gets found again on the next pass, fails again, and loops forever.
 
 The third is the download path, and it is the whole point of
-[yesterday's post about the single mount]({% post_url 2026-08-14-one-docker-mount-for-the-arrs %}):
+[the post about the single mount]({% post_url 2026-08-14-one-docker-mount-for-the-arrs %}):
 
 ```ini
 # Same folder as before, but reached via Lidarr's /data mount so it sits on the
@@ -197,7 +197,7 @@ convert:
 - HARDLINK_TORRENTS_AUDIOBOOK=false
 ```
 
-That last line is a deliberate exception to everything I argued yesterday.
+That last line is a deliberate exception to everything I argued above.
 Audiobook torrents routinely arrive as multi-part RAR sets rather than
 playable files, so there is nothing sensible to hardlink. Copy and extract
 is the correct behaviour here, even though it costs the disk space.
