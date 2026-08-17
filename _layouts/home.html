@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <div class="post-grid">
+      {%- for post in site.posts -%>
+      <a class="post-card" href="{{ post.url | relative_url }}">
+        <span class="post-card-meta">
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          {{ post.date | date: date_format }}
+          {%- if post.categories.size > 0 %} · {{ post.categories | first }}{% endif -%}
+        </span>
+        <h2 class="post-card-title">{{ post.title | escape }}</h2>
+        {%- if post.excerpt -%}
+          <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
+        {%- endif -%}
+        <span class="post-card-more">Read post &rarr;</span>
+      </a>
+      {%- endfor -%}
+    </div>
+
+    <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {%- endif -%}
+</div>
