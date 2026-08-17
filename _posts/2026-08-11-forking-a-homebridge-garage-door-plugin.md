@@ -4,6 +4,9 @@ title: "Getting My Garage Door into HomeKit: Forking and Rebuilding a Homebridge
 date: 2026-08-11
 categories: [projects, homelab]
 author: Andrew Snape
+image: /assets/images/og/forking-a-homebridge-garage-door-plugin.png
+redirect_from:
+  - /projects/homelab/2026/08/11/forking-a-homebridge-garage-door-plugin.html
 ---
 
 My garage door is a [Centurion](https://www.cgdoors.com.au) -- an Australian brand with its own smartphone app and a local API baked into the door's controller. I run [Homebridge](https://homebridge.io) for everything else in the house (it's the open-source bridge that exposes non-HomeKit smart devices to Apple's Home app), so getting the door to show up there properly, camera and all, turned into its own small project.

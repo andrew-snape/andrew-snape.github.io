@@ -4,6 +4,9 @@ title: "Running Homebridge for an All-Apple House"
 date: 2026-08-13
 categories: [homelab, homebridge]
 author: Andrew Snape
+image: /assets/images/og/running-homebridge-for-an-all-apple-house.png
+redirect_from:
+  - /homelab/homebridge/2026/08/13/running-homebridge-for-an-all-apple-house.html
 ---
 
 Every device in this house that talks to a phone talks to an iPhone. Apple TVs for video, HomePods for audio, and the front door, the garage, and the temperature sensors around the house already running as native HomeKit accessories -- so the moment I started adding devices that don't speak HomeKit on their own, the only sane goal was still getting every one of them into the same Home app rather than juggling a separate app per brand. [Homebridge](https://homebridge.io) is what makes that possible for the devices that don't speak HomeKit natively, and it's been running on the NAS for a while now, quietly bridging things Apple never built official support for.

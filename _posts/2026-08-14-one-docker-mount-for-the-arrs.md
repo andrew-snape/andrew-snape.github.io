@@ -4,6 +4,9 @@ title: "The One Docker Mount That Makes the *arrs Actually Work"
 date: 2026-08-14
 categories: [homelab, docker]
 author: Andrew Snape
+image: /assets/images/og/one-docker-mount-for-the-arrs.png
+redirect_from:
+  - /homelab/docker/2026/08/14/one-docker-mount-for-the-arrs.html
 ---
 
 If you run Sonarr, Radarr or Lidarr in Docker and imports feel slow, or your

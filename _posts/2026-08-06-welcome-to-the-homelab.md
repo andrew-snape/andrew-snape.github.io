@@ -4,6 +4,9 @@ title: "Welcome to the Homelab"
 date: 2026-08-06
 categories: [homelab, docker]
 author: Andrew Snape
+image: /assets/images/og/welcome-to-the-homelab.png
+redirect_from:
+  - /homelab/docker/2026/08/06/welcome-to-the-homelab.html
 ---
 
 Hello, and welcome! This blog used to be a home for Mac fleet-management scripts — that work has since wrapped up and those repos are retired. These days my focus has shifted from managing Macs to managing my own homelab, so that's what this space is now about: a coding blog covering the NAS, the containers, and the automation that holds it all together.

@@ -4,6 +4,9 @@ title: "Plex, Docker, and Getting Intel Quick Sync Working Again"
 date: 2026-08-11
 categories: [homelab, plex]
 author: Andrew Snape
+image: /assets/images/og/plex-docker-intel-quick-sync.png
+redirect_from:
+  - /homelab/plex/2026/08/11/plex-docker-intel-quick-sync.html
 ---
 
 I've been running [Plex](https://www.plex.tv) for years now, pretty much back to when it first existed. It's moved through a small graveyard of hardware over that time -- an old Mac mini, a couple of Raspberry Pis -- and for a while now it's lived on a Synology DS920+, running in Docker rather than as a bare Synology package.

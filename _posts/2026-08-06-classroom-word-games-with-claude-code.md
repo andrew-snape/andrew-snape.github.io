@@ -4,6 +4,9 @@ title: "Building a Classroom Word Games Site with Claude Code"
 date: 2026-08-06
 categories: [projects, education]
 author: Andrew Snape
+image: /assets/images/og/classroom-word-games-with-claude-code.png
+redirect_from:
+  - /projects/education/2026/08/06/classroom-word-games-with-claude-code.html
 ---
 
 Not everything I build lives on the NAS. This one's for my Year 6 class: a

@@ -4,6 +4,9 @@ title: "Automating My Media Library with FileFlows"
 date: 2026-08-11
 categories: [homelab, fileflows]
 author: Andrew Snape
+image: /assets/images/og/fileflows-automated-media-transcoding.png
+redirect_from:
+  - /homelab/fileflows/2026/08/11/fileflows-automated-media-transcoding.html
 ---
 
 Storage keeps getting more expensive to add, not less -- about 17TB in now, before RAID overhead, and every extra drive is a bigger ask than the last one. Long term the real fix is smaller files: re-encoding the older, wasteful parts of the library into H.265/HEVC (or AV1) instead of just buying more disks. I looked at doing this by hand a couple of times and gave up both times -- manual ffmpeg batch jobs that didn't talk to the rest of the setup and didn't scale past "run it once on a folder and hope."

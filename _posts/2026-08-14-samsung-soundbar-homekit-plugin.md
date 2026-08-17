@@ -4,6 +4,9 @@ title: "Getting a Samsung Soundbar into HomeKit: A Homebridge Plugin, Shipped Tw
 date: 2026-08-14
 categories: [projects, homelab, homebridge]
 author: Andrew Snape
+image: /assets/images/og/samsung-soundbar-homekit-plugin.png
+redirect_from:
+  - /projects/homelab/homebridge/2026/08/14/samsung-soundbar-homekit-plugin.html
 ---
 
 The soundbar in the lounge does AirPlay 2 fine, but it has never once shown up in the Home app's "Add Accessory" flow -- Samsung just never built HomeKit support in, and the official path to controlling it from a phone is the SmartThings app, with its own account and its own cloud round trip for a command as simple as "turn down the volume." I didn't want a second smart-home ecosystem for one device, so this turned into [`@snapeos/homebridge-samsung-soundbar-local`](https://github.com/andrew-snape/homebridge-samsung-soundbar-local) -- a Homebridge plugin for local, no-cloud control of D-series-and-later Samsung soundbars, verified against my own HW-Q930D.

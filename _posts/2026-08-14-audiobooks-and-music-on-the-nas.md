@@ -4,6 +4,9 @@ title: "Audiobooks and Music: The Messy Half of the Media Stack"
 date: 2026-08-14
 categories: [homelab, audiobooks, music]
 author: Andrew Snape
+image: /assets/images/og/audiobooks-and-music-on-the-nas.png
+redirect_from:
+  - /homelab/audiobooks/music/2026/08/14/audiobooks-and-music-on-the-nas.html
 ---
 
 Video is a solved problem. Sonarr and Radarr find things, Plex plays them,

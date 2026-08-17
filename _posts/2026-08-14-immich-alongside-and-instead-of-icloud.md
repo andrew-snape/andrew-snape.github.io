@@ -4,6 +4,9 @@ title: "Immich: Photos Alongside iCloud, and Slowly Instead of It"
 date: 2026-08-14
 categories: [homelab, immich]
 author: Andrew Snape
+image: /assets/images/og/immich-alongside-and-instead-of-icloud.png
+redirect_from:
+  - /homelab/immich/2026/08/14/immich-alongside-and-instead-of-icloud.html
 ---
 
 This is an all-Apple house, so iCloud Photos is the path of least

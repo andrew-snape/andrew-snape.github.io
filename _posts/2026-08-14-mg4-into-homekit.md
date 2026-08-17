@@ -4,6 +4,9 @@ title: "Getting My Electric Car into HomeKit, and Proving One Feature Was Imposs
 date: 2026-08-14
 categories: [projects, homelab, homebridge]
 author: Andrew Snape
+image: /assets/images/og/mg4-into-homekit.png
+redirect_from:
+  - /projects/homelab/homebridge/2026/08/14/mg4-into-homekit.html
 ---
 
 I drive an MG4, and like most modern EVs it comes with a phone app -- "iSmart" -- for checking battery level, locking the doors, and firing off the odd remote command before you've even walked out to the car. It works fine. It is also its own separate app, with its own separate account, sitting completely outside the Home app where every other device in the house lives. So [`homebridge-mg-saic`](https://github.com/andrew-snape/homebridge-mg-saic) exists to fix that: a Homebridge plugin that talks to the same undocumented cloud API the iSmart app uses, and puts the car in HomeKit alongside everything else.
