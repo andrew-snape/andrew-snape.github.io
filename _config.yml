@@ -31,7 +31,13 @@ github_username:  andrew-snape
 
 # Default social preview image (used for og:image / twitter:image on any
 # page or post that doesn't set its own `image:` in its front matter).
-image: /assets/images/social-card.png
+# jekyll-seo-tag only reads `page.image`, not a site-level `image:` key,
+# so this has to go through Jekyll's own front-matter defaults instead.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/social-card.png
 twitter:
   card: summary_large_image
 
