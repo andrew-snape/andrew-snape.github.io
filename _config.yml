@@ -28,6 +28,14 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://andrew-snape.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
+
+# Last.fm "now playing" widget on the Uses page (assets/lastfm.js).
+# The API key is a public, read-only, non-secret credential -- it's meant
+# to be embedded in client-side code like this. Never put the shared
+# secret here; it's only needed for authenticated write calls (scrobbling)
+# and this widget only ever reads.
+lastfm_username: AndrewSnape
+lastfm_api_key: 043779f46e2e4d44574daa2dc442b219
 github_username:  andrew-snape
 
 # Default social preview image (used for og:image / twitter:image on any

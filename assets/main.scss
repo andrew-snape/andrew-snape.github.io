@@ -203,6 +203,36 @@ pre code { background: none; padding: 0; }
 .post-nav a { font-size: 0.9rem; text-decoration: none; color: var(--muted); }
 .post-nav a:hover { color: var(--text); }
 
+/* last.fm now-playing widget */
+.lastfm-widget {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+.lastfm-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+.lastfm-dot.is-live {
+  background: #6bbf59;
+  animation: lastfm-pulse 1.8s ease-in-out infinite;
+}
+@keyframes lastfm-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.lastfm-label {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 /* footer */
 .site-footer {
   border-top: 1px solid var(--border);
