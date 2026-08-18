@@ -2,7 +2,10 @@
   <div class="wrapper">
     <a class="site-title" href="{{ "/" | relative_url }}">
       <img class="site-logo" src="{{ "/assets/images/favicon.svg" | relative_url }}" width="24" height="24" alt="">
-      {{ site.title | escape }}
+      <span class="site-title-text">
+        <span class="site-name">{{ site.title | escape }}</span>
+        <span class="site-tagline">Homelab, travel, and a loud stereo</span>
+      </span>
     </a>
 
     {%- assign default_paths = site.pages | map: "path" -%}

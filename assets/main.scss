@@ -64,14 +64,29 @@ a:hover { text-decoration-color: var(--text); }
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  font-weight: 600;
-  font-size: 1.05rem;
   text-decoration: none;
-  letter-spacing: -0.01em;
 }
 .site-logo {
   display: block;
   border-radius: 6px;
+}
+.site-title-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+.site-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+.site-tagline {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 .site-nav {
   display: flex;
