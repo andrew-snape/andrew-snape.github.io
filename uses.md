@@ -21,7 +21,7 @@ What's actually running behind the posts on this site.
 - **[Plex](https://www.plex.tv)** — media playback, hardware-transcoded via Quick Sync.
 - **[Immich](https://immich.app)** — photo library, running alongside iCloud Photos rather than instead of it, for now.
 - **[FileFlows](https://fileflows.com)** — automated file processing: transcoding, repackaging, cleanup, gated on the same `/dev/dri` Quick Sync passthrough as Plex.
-- **Sonarr, Radarr, Lidarr, Prowlarr** — the *arrs, for finding and organizing TV, movies, and music.
+- **Sonarr, Radarr, Lidarr, Prowlarr** — the *arrs, for finding and organising TV, movies, and music.
 - **SABnzbd** — download client.
 
 ## Homebridge plugins built for this
@@ -34,6 +34,6 @@ Local, no-cloud HomeKit control for devices that don't speak HomeKit natively:
 
 ## This site
 
-- **[Jekyll](https://jekyllrb.com)**, on top of a heavily customized fork of the [minima](https://github.com/jekyll/minima) theme.
+- **[Jekyll](https://jekyllrb.com)**, on top of a heavily customised fork of the [minima](https://github.com/jekyll/minima) theme.
 - Hosted on **GitHub Pages**, built and deployed by its own GitHub Actions workflow rather than the legacy branch-based Pages source.
 - Most of it — the theme, the plugins above, and a good chunk of these posts — built working with [Claude Code](https://claude.com/claude-code).
