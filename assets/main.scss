@@ -204,10 +204,18 @@ pre code { background: none; padding: 0; }
 .post-nav a:hover { color: var(--text); }
 
 /* last.fm now-playing widget */
-.lastfm-widget {
+.lastfm-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.lastfm-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   font-size: 0.95rem;
 }
 .lastfm-dot {
@@ -231,6 +239,8 @@ pre code { background: none; padding: 0; }
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  min-width: 5.5em;
+  flex-shrink: 0;
 }
 
 /* footer */

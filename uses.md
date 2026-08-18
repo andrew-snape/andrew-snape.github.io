@@ -6,11 +6,6 @@ permalink: /uses/
 
 What's actually running behind the posts on this site.
 
-## Now
-
-<p id="lastfm-now-playing" class="lastfm-widget" hidden></p>
-<script src="{{ "/assets/lastfm.js" | relative_url }}" defer></script>
-
 ## Hardware
 
 - **Synology DS920+** — the NAS everything lives on. Its Intel chip does double duty: Quick Sync for Plex/Immich hardware transcoding, and OpenVINO for Immich's machine learning (face detection, search) on the iGPU rather than the CPU.
@@ -37,3 +32,10 @@ Local, no-cloud HomeKit control for devices that don't speak HomeKit natively:
 - **[Jekyll](https://jekyllrb.com)**, on top of a heavily customised fork of the [minima](https://github.com/jekyll/minima) theme.
 - Hosted on **GitHub Pages**, built and deployed by its own GitHub Actions workflow rather than the legacy branch-based Pages source.
 - Most of it — the theme, the plugins above, and a good chunk of these posts — built working with [Claude Code](https://claude.com/claude-code).
+
+## Now playing
+
+Scrobbled to [Last.fm](https://www.last.fm/user/AndrewSnape) from [Plexamp](https://www.plex.tv/plexamp/).
+
+<div id="lastfm-now-playing" class="lastfm-widget" hidden></div>
+<script src="{{ "/assets/lastfm.js" | relative_url }}" defer></script>
