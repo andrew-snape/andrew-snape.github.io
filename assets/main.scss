@@ -61,10 +61,17 @@ a:hover { text-decoration-color: var(--text); }
   gap: 0.5rem 1.5rem;
 }
 .site-title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
   font-weight: 600;
   font-size: 1.05rem;
   text-decoration: none;
   letter-spacing: -0.01em;
+}
+.site-logo {
+  display: block;
+  border-radius: 6px;
 }
 .site-nav {
   display: flex;

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="56" fill="#1b1b18"/>
+  <text x="122" y="172" text-anchor="middle"
+        font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace"
+        font-size="104" font-weight="600" fill="#fdfdfb">AS</text>
+  <circle cx="204" cy="196" r="19.2" fill="#6bbf59"/>
+</svg>

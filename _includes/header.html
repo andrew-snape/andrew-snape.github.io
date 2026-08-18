@@ -1,6 +1,9 @@
 <header class="site-header" role="banner">
   <div class="wrapper">
-    <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <a class="site-title" href="{{ "/" | relative_url }}">
+      <img class="site-logo" src="{{ "/assets/images/favicon.svg" | relative_url }}" width="24" height="24" alt="">
+      {{ site.title | escape }}
+    </a>
 
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
