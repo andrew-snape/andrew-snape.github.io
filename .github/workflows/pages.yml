@@ -46,6 +46,14 @@ jobs:
         with:
           ruby-version: '3.3'
           bundler-cache: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate per-post social preview images
+        run: |
+          pip install pillow
+          python scripts/generate_og_images.py
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -53,6 +61,12 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build search index with Pagefind
+        run: npx -y pagefind --site _site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
