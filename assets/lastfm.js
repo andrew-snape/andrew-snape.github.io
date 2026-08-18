@@ -46,6 +46,12 @@
   function render(tracks) {
     root.textContent = "";
 
+    var anyLive = (tracks || []).some(function (track) {
+      return !!(track["@attr"] && track["@attr"].nowplaying === "true");
+    });
+    var boombox = root.closest(".boombox");
+    if (boombox) boombox.classList.toggle("is-playing", anyLive);
+
     var rows = (tracks || [])
       .filter(function (track) {
         var live = !!(track["@attr"] && track["@attr"].nowplaying === "true");

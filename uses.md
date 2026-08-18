@@ -37,5 +37,36 @@ Local, no-cloud HomeKit control for devices that don't speak HomeKit natively:
 
 Scrobbled to [Last.fm](https://www.last.fm/user/AndrewSnape) from [Plexamp](https://www.plex.tv/plexamp/).
 
-<div id="lastfm-now-playing" class="lastfm-widget" hidden></div>
+<div class="boombox" aria-hidden="false">
+  <div class="boombox-speaker" aria-hidden="true"></div>
+  <div class="boombox-body">
+    <div class="boombox-handle" aria-hidden="true"></div>
+    <div class="boombox-tuner" aria-hidden="true"><span class="boombox-tuner-needle"></span></div>
+    <div class="boombox-screen">
+      <div id="lastfm-now-playing" class="lastfm-widget" hidden></div>
+    </div>
+    <div class="boombox-controls" aria-hidden="true">
+      <div class="boombox-knob-group">
+        <span class="boombox-knob"></span>
+        <span class="boombox-knob-label">Vol</span>
+      </div>
+      <div class="boombox-knob-group">
+        <span class="boombox-knob"></span>
+        <span class="boombox-knob-label">Bass</span>
+      </div>
+      <div class="boombox-knob-group">
+        <span class="boombox-knob"></span>
+        <span class="boombox-knob-label">Tre</span>
+      </div>
+      <div class="boombox-meter">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="boombox-cassette" aria-hidden="true">
+      <span class="boombox-reel"></span>
+      <span class="boombox-reel"></span>
+    </div>
+  </div>
+  <div class="boombox-speaker" aria-hidden="true"></div>
+</div>
 <script src="{{ "/assets/lastfm.js" | relative_url }}" defer></script>

@@ -217,6 +217,14 @@ pre code { background: none; padding: 0; }
   align-items: center;
   gap: 0.6rem;
   font-size: 0.95rem;
+  min-width: 0;
+}
+.lastfm-row a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  flex: 1;
 }
 .lastfm-dot {
   width: 8px;
@@ -241,6 +249,224 @@ pre code { background: none; padding: 0; }
   letter-spacing: 0.04em;
   min-width: 5.5em;
   flex-shrink: 0;
+}
+
+/* boombox chassis around the widget -- one continuous housing, not
+   separate shapes, so the speakers read as part of the same object
+   rather than floating disconnected circles. */
+.boombox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+  max-width: 34rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid var(--text);
+  border-radius: 20px;
+  background: var(--bg);
+  padding: 0.85rem;
+}
+.boombox-speaker {
+  position: relative;
+  width: 6.5rem;
+  height: 6.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--text);
+  flex-shrink: 0;
+  overflow: hidden;
+  background-image: radial-gradient(var(--border) 1px, transparent 1.2px);
+  background-size: 7px 7px;
+  background-position: center;
+}
+.boombox-speaker::after {
+  content: "";
+  position: absolute;
+  inset: 30%;
+  border-radius: 50%;
+  border: 2px solid var(--text);
+  background: var(--bg);
+}
+.boombox-body {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  padding-top: 0.55rem;
+}
+.boombox-handle {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  max-width: 8rem;
+  height: 13px;
+  border: 2px solid var(--text);
+  border-radius: 7px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--bg) 0,
+    var(--bg) 3px,
+    var(--border) 3px,
+    var(--border) 4px
+  );
+}
+.boombox-tuner {
+  position: relative;
+  height: 10px;
+  margin-bottom: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--border) 0,
+    var(--border) 1px,
+    transparent 1px,
+    transparent 9px
+  );
+}
+.boombox-tuner-needle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30%;
+  width: 2px;
+  background: var(--text);
+}
+.boombox-screen {
+  position: relative;
+  background: #14160f;
+  border-radius: 6px;
+  padding: 0.7rem 0.85rem;
+  margin-bottom: 0.75rem;
+  max-height: 7rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+.boombox-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15) 0,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+}
+.boombox-screen .lastfm-list { margin-top: 0; gap: 0.45rem; }
+.boombox-screen .lastfm-row { font-size: 0.85rem; }
+.boombox-screen .lastfm-dot { background: #3c4736; }
+.boombox-screen .lastfm-dot.is-live { background: #6bbf59; box-shadow: 0 0 6px #6bbf59; }
+.boombox-screen .lastfm-label { color: #7fa374; }
+.boombox-screen .lastfm-list a { color: #d7f5cc; text-decoration-color: rgba(215, 245, 204, 0.35); }
+.boombox-screen .lastfm-list a:hover { text-decoration-color: #d7f5cc; }
+
+.boombox-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.1rem;
+  margin-bottom: 1rem;
+}
+.boombox-knob-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+.boombox-knob {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--text);
+  background: var(--bg);
+}
+.boombox-knob::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  width: 2px;
+  height: 5px;
+  background: var(--text);
+  transform: translateX(-50%);
+}
+.boombox-knob-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.boombox-meter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 3px;
+  height: 1.5rem;
+  flex: 1;
+}
+.boombox-meter span {
+  width: 4px;
+  height: 30%;
+  background: #3c4736;
+  border-radius: 1px;
+  transform-origin: bottom;
+  transition: background 0.3s ease;
+}
+.boombox.is-playing .boombox-meter span {
+  background: #6bbf59;
+  animation: boombox-meter-flicker 0.9s ease-in-out infinite;
+}
+.boombox.is-playing .boombox-meter span:nth-child(1) { height: 45%; animation-delay: 0s; }
+.boombox.is-playing .boombox-meter span:nth-child(2) { height: 75%; animation-delay: 0.1s; }
+.boombox.is-playing .boombox-meter span:nth-child(3) { height: 50%; animation-delay: 0.22s; }
+.boombox.is-playing .boombox-meter span:nth-child(4) { height: 95%; animation-delay: 0.05s; }
+.boombox.is-playing .boombox-meter span:nth-child(5) { height: 60%; animation-delay: 0.3s; }
+.boombox.is-playing .boombox-meter span:nth-child(6) { height: 85%; animation-delay: 0.15s; }
+.boombox.is-playing .boombox-meter span:nth-child(7) { height: 55%; animation-delay: 0.25s; }
+.boombox.is-playing .boombox-meter span:nth-child(8) { height: 40%; animation-delay: 0.35s; }
+@keyframes boombox-meter-flicker {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.4); }
+}
+
+.boombox-cassette {
+  height: 2.3rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--code-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+}
+.boombox-reel {
+  position: relative;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--muted);
+}
+.boombox-reel::after {
+  content: "";
+  position: absolute;
+  inset: 32%;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+@media (max-width: 600px) {
+  .boombox-speaker { display: none; }
+  .boombox-controls { flex-wrap: wrap; }
+  .boombox-meter { flex-basis: 100%; justify-content: flex-start; }
 }
 
 /* footer */
