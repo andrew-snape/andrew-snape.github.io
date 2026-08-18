@@ -2,6 +2,8 @@
 layout: page
 title: Search
 permalink: /search/
+sitemap: false
+no_index: true
 ---
 
 <div id="search"></div>
