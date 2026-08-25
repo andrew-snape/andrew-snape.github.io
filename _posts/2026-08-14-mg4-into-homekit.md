@@ -105,3 +105,19 @@ npm install -g homebridge-mg-saic
 Repo's at [andrew-snape/homebridge-mg-saic](https://github.com/andrew-snape/homebridge-mg-saic), MIT licensed, full credit to [`SAIC-iSmart-API/saic-python-client-ng`](https://github.com/SAIC-iSmart-API/saic-python-client-ng) for mapping the API first. If you've got an MG4 on different hardware or firmware and want to take another run at the window mystery, the escape hatch is still sitting there in the code, commented and waiting.
 
 Andrew
+
+## Update: pre-conditioning confirmed, and another "not a bug"
+
+Six releases since this post went up (0.7.0 through 0.9.4). The short version: it got faster, it got more resilient, and the one feature still marked "implemented but nobody's actually tried it on the real car" finally got tried.
+
+**Speed and reliability first.** Vehicle status and charging status now fetch in parallel instead of one after the other, which roughly halves refresh time when the car's asleep and has to wake up over its own cellular connection. An expired token now triggers an automatic re-login mid-poll instead of requiring a Homebridge restart. The whole codebase moved to TypeScript, with a Vitest suite and ESLint running in CI ahead of every publish.
+
+**Pre-conditioning — the remote aircon — is now confirmed working.** Tapping it in Home returned `code: 0` after about 16 seconds and three polls, and the climate system audibly kicked on.
+
+It came with its own small mystery, same shape as the window one: it runs the *heater*, every time, regardless of ambient temperature — and that's correct, not a bug. The command asks for a fixed 22°C and never sets the compressor flag, and on this car heating runs on a resistive element with the compressor off. So "pre-conditioning" means "warm the cabin to 22°C," not "set my preferred temperature" — worth knowing before you rely on it on a 40-degree day. Now documented properly in `docs/API.md`, including the temperature-index formula and a specific warning that fan-speed bytes 4 and 5 aren't higher fan speeds — they silently put the car into heat-plus-front-defrost.
+
+Two real bugs turned up from actual usage logs, not lab testing. A command the car explicitly rejects (`code: 8`) used to retry for the full 60 seconds before failing, burying a message like "Vehicle is powered on. Please turn it off and try again." — it now fails immediately and surfaces that message. Same log run showed the car requires being **locked with the ignition off** before it'll accept seat-heat or rear-defrost commands remotely — a vehicle-side restriction, not something the plugin can work around, but useful to know before assuming a command's gone nowhere. And cached-accessory edits weren't being written back to Homebridge's on-disk cache, so a newly enabled switch could stay invisible in Home until you removed and re-paired the accessory.
+
+Full blow-by-blow is in [CHANGELOG.md](https://github.com/andrew-snape/homebridge-mg-saic/blob/main/CHANGELOG.md).
+
+Andrew
