@@ -1,4 +1,62 @@
 User-agent: *
 Allow: /
+Disallow: /ts-links/
+
+# /ts-links/ is a private internal-services dashboard served from a
+# separate repo (andrew-snape/ts-links) as a subpath of this domain.
+# robots.txt is only ever consulted at the domain root, so this is the
+# one that actually takes effect -- a robots.txt committed inside that
+# repo's own build output is never fetched by any crawler. Named below
+# for clarity, though the wildcard rule above already covers them.
+User-agent: GPTBot
+Disallow: /ts-links/
+
+User-agent: ChatGPT-User
+Disallow: /ts-links/
+
+User-agent: OAI-SearchBot
+Disallow: /ts-links/
+
+User-agent: CCBot
+Disallow: /ts-links/
+
+User-agent: Google-Extended
+Disallow: /ts-links/
+
+User-agent: GoogleOther
+Disallow: /ts-links/
+
+User-agent: anthropic-ai
+Disallow: /ts-links/
+
+User-agent: ClaudeBot
+Disallow: /ts-links/
+
+User-agent: Claude-Web
+Disallow: /ts-links/
+
+User-agent: PerplexityBot
+Disallow: /ts-links/
+
+User-agent: Bytespider
+Disallow: /ts-links/
+
+User-agent: Amazonbot
+Disallow: /ts-links/
+
+User-agent: Applebot-Extended
+Disallow: /ts-links/
+
+User-agent: cohere-ai
+Disallow: /ts-links/
+
+User-agent: Diffbot
+Disallow: /ts-links/
+
+User-agent: FacebookBot
+Disallow: /ts-links/
+
+User-agent: meta-externalagent
+Disallow: /ts-links/
 
 Sitemap: https://andrew-snape.github.io/sitemap.xml
