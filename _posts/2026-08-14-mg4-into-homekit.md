@@ -121,3 +121,17 @@ Two real bugs turned up from actual usage logs, not lab testing. A command the c
 Full blow-by-blow is in [CHANGELOG.md](https://github.com/andrew-snape/homebridge-mg-saic/blob/main/CHANGELOG.md).
 
 Andrew
+
+## Update 2: the aircon gets a thermostat, then splits in two
+
+Three more releases (0.9.5 to 0.9.7) have landed since the update above, and they fix the thing I called out there: that "pre-conditioning" only meant "warm the cabin to a fixed 22°C."
+
+**0.9.5: a temperature slider.** Pre-conditioning stopped being a plain on/off Switch and became a HomeKit `HeaterCooler`, so the tile in the Home app now has a 17-33°C slider. The plugin translates the chosen temperature into the car's own index (`idx = 3 + (°C - 17)`, which is where the old default of 22°C came from) and sends it with the start command. If the climate is already running when you move the slider, it re-sends immediately, so the car adjusts without you toggling it off and on.
+
+**0.9.6: Cool mode.** The compressor flag I'd noted was missing turned out to be the real heat/cool switch, so the tile's mode icon now switches between Heat and Cool, and changing mode mid-run re-sends the command. Cool is built from the API documentation and the Home Assistant integration's notes, but it **hasn't been confirmed on real hardware yet**; Heat has.
+
+**0.9.7: two tiles instead of one.** The mode icon on a HeaterCooler turned out to be a poor fit for how I actually use the car. You can't say "turn on cabin cool" to Siri, and a HomeKit automation can't pick a mode without tapping through. So pre-conditioning is now two separate tiles, **Cabin Heat** and **Cabin Cool**, each locked to a single mode with its own remembered target temperature. Turning one on shows the other as off, because the car only has one climate system underneath. They were never independently controllable, just independently *addressable*. That's enough for a "warm the car at 6:30 on cold mornings" automation next to a "cool it at 3pm in summer" one.
+
+The pattern here is a recurring one in this project: the car's API is the same either way, and the work is in shaping it to match how HomeKit, Siri and automations expect devices to behave. Full details are in the [changelog](https://github.com/andrew-snape/homebridge-mg-saic/blob/main/CHANGELOG.md).
+
+Andrew
